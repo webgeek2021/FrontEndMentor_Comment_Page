@@ -1,0 +1,39 @@
+@use "color" as c;
+@use "variables" as var;
+
+.comment-btn{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: c.$very-light-gray;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 15px;
+    button{
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        margin: 0px ;
+        &:focus,&:active{
+            background-color: transparent;
+            border-color:transparent;
+        }
+        cursor: pointer;
+    }
+    span{
+        color : c.$moderate-blue;
+        font-weight: 500;
+    }
+    .btn{
+        &:active,&:not(.btn-check),&:first-child:active{
+            background-color: transparent;
+            border-color:transparent;
+        }
+    }
+}
+
+@media screen and (min-width : var.$desktop-width) {
+    .comment-btn{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,30 @@
+@use "color" as c;
+@use "variables" as var;
+.title_container{
+    margin-bottom: 20px;
+    img{
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        margin-right: 16px;
+    }
+    p{
+        margin: 0px;
+        
+    }
+    .username{
+        margin-right: 8px;
+        font-weight: 500;
+    }
+    .user_label{
+        color: c.$white;
+        background-color: c.$moderate-blue;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-right: 16px;
+    }
+    .date{
+        color : c.$grayish-blue
+    }
+}
+

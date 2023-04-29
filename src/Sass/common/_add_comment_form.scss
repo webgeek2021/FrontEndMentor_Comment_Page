@@ -1,0 +1,56 @@
+@use "color" as c;
+@use "variables" as var;
+
+.add-comment-form{
+    padding: 15px;
+    background-color: c.$white;
+    position: relative;
+    border-radius: 10px;
+    .userImage{
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        // order: 2;
+    }
+    .comment-input{
+        height: 95px;
+        padding:10px 20px ;
+        margin-bottom: 30px;
+        border: 1px solid c.$grayish-blue;
+        border-radius: 7px;
+    }
+    .send_btn{
+        background-color: c.$moderate-blue;
+        color: c.$white;
+        border-radius: 5px;
+        width: fit-content;
+        position: absolute;
+        bottom: 15px;
+        padding: 10px 30px;
+        // padding: 10px 15px ;
+        right: 15px;
+        &:focus{
+            background-color: c.$moderate-blue;
+            color: c.$white;
+        
+        }
+    }
+}
+
+@media screen and (min-width : var.$desktop-width) {
+    .add-comment-form{
+       .userImage{
+        width: 42px;
+        height: 42px;
+        margin-right: 20px;
+       }
+       .comment-input{
+        width: calc(100% - 185px) ;
+       }
+       .send_btn{
+        top: 15px;
+        bottom: auto;
+   
+       }
+    }
+}

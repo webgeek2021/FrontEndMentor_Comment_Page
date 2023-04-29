@@ -1,0 +1,141 @@
+@use "color" as c;
+@use "variables" as var;
+
+.holder {
+    margin-bottom: 25px;
+
+    .comment_containar {
+        padding: 15px;
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        border-radius: 10px;
+        background-color: c.$white;
+
+
+        .content-container {
+            .content {
+                color: c.$grayish-blue;
+                font-weight: 400;
+
+                .replying_to {
+                    color: c.$moderate-blue;
+                    font-weight: 500;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .user_btn_section {
+            position: absolute;
+            bottom: 24px;
+            right: 15px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                padding: 0px;
+                font-weight: 500;
+
+                &:focus {
+                    background-color: transparent;
+                }
+            }
+
+            .delete_btn {
+                margin-right: 14px;
+
+                img {
+                    margin-right: 8px;
+                }
+
+                span {
+                    color: c.$soft-red;
+                }
+            }
+
+            .edit_btn {
+                img {
+                    margin-right: 8px;
+                }
+
+                span {
+                    color: c.$moderate-blue;
+                }
+            }
+        }
+
+        .reply_btn {
+            background-color: transparent;
+            max-width: fit-content;
+            border: none;
+            position: absolute;
+            bottom: 24px;
+            right: 15px;
+
+            &:focus {
+                border: none;
+                background-color: transparent;
+            }
+
+            img {
+                margin-right: 8px;
+            }
+
+            span {
+                color: c.$moderate-blue;
+                font-weight: 700;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+    }
+
+    .reply_container {
+        padding-left: 15px;
+        border-left: 1px solid c.$grayish-blue;
+
+        .add-comment-form {
+            margin-bottom: 15px;
+        }
+
+    }
+}
+
+@media screen and (min-width : var.$desktop-width) {
+    .holder {
+        .comment_containar {
+            flex-direction: row;
+            padding: 32px 24px;
+            max-height: 168px;
+            .comment-btn {
+                max-width : 50px;
+                margin-right: 24px;
+            }
+
+            .user_btn_section {
+                bottom: auto;
+                top: 32px;
+                right: 24px;
+            }
+
+            .reply_btn {
+                bottom: auto;
+                top: 32px;
+                right: 24px;
+            }
+        }
+
+        .reply_container {
+            padding-left: 39px;
+            margin-left: 45px;
+            .add-comment-form {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+
+@use "color" as color;
+.delete-modal{
+    .modal-dialog{
+        .modal-content{
+            padding: 33px;
+
+            .modal-header,.modal-body{
+                margin-bottom: 28px;
+            }
+            .modal-body{
+                max-width: 402px;
+                font-size: 20px;
+            }
+            .modal-header , .modal-body , .modal-footer{
+                padding: 0px !important;
+            }
+            .modal-footer{
+
+                justify-content: space-between;
+                button{
+                    padding: 20px 43px;
+                    font-size: 22px;
+                    border: none;
+                    &:not(:last-child){
+                        margin-right: 12px;
+                    }
+                }
+
+                .cancel-btn{
+                    background-color: color.$dark-blue;
+                }
+                .delete-btn{
+                    background-color: color.$soft-red;
+                }
+            }
+        }
+    }
+}

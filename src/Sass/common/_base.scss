@@ -1,0 +1,31 @@
+@use "color" as c;
+@use "variables" as var;
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+    padding: 0px ;
+    margin: 0px ;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    background-color: c.$very-light-gray;
+
+}
+
+.App{
+    max-width: 735px;
+    margin: 0 auto;
+}
+.wrapper {
+    // background-color: red;
+    margin:30px 15px;
+}
+@media  screen and (min-width : var.$desktop-width){
+    .wrapper{
+        margin: 60px auto;
+    }
+}
