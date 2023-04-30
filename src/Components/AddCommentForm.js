@@ -9,7 +9,7 @@ const AddCommentForm = (props) => {
   const CommentContext = React.useContext(CustomHook)
   // console.log("USER",user.userName)
   const handleComment = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     if (e.target.value) {
       setComment(e.target.value)
     }

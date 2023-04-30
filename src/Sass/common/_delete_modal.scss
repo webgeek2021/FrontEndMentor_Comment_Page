@@ -1,5 +1,6 @@
 
 @use "color" as color;
+@use "variables" as var;
 .delete-modal{
     .modal-dialog{
         .modal-content{
@@ -16,15 +17,11 @@
                 padding: 0px !important;
             }
             .modal-footer{
-
-                justify-content: space-between;
                 button{
+                    width: 100%;
                     padding: 20px 43px;
                     font-size: 22px;
                     border: none;
-                    &:not(:last-child){
-                        margin-right: 12px;
-                    }
                 }
 
                 .cancel-btn{
@@ -36,4 +33,22 @@
             }
         }
     }
+}
+
+@media screen and (min-width : var.$desktop-width) {
+    .delete-modal{
+        .modal-dialog{
+            .modal-content{
+                .modal-footer{
+                    justify-content: space-between;
+                    button{
+                        &:not(:last-child){
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

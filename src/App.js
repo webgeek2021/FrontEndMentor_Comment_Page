@@ -1,19 +1,20 @@
 import React from "react";
 import CommentHolder from "./Components/CommentHolder";
-import Reply from "./Components/Reply";
+// import Reply from "./Components/Reply";
 import CustomHook from "./Hooks/CustomHook";
 import { data } from "./data.js"
+import UserIcon from "./images/avatars/image-juliusomo.png";
 function App() {
   const [commentData, setData] = React.useState(JSON.parse(localStorage.getItem("Comments")))
   React.useEffect(() => {
-    const userName = localStorage.getItem("user")
-    console.log(userName)
-    if (!userName) {
-      console.log("NO USER")
-      localStorage.setItem("user", JSON.stringify({ "userName": "juliusomo", "profileImage": "" }))
+    const user = JSON.parse(localStorage.getItem("user"))
+    // console.log(user)
+    if (!user) {
+      // console.log("NO USER")
+      localStorage.setItem("user", JSON.stringify({ "userName": "juliusomo", "profileImage": UserIcon }))
     }
     if (!commentData) {
-      console.log("IN", data)
+      // console.log("IN", data)
       localStorage.setItem("Comments", JSON.stringify(data[0].comments))
       setData(data[0].comments)
     }
@@ -31,7 +32,7 @@ function App() {
             <div className="comment_holder">
               <CommentHolder/>
             </div>
-            <Reply />
+            {/* <Reply /> */}
           </CustomHook.Provider>}
         {/* comment section to write comment */}
       </section>

@@ -10,7 +10,7 @@ import DeleteModal from './DeleteModal';
 import CustomHook from '../Hooks/CustomHook';
 const Comment = (props) => {
     const [count, setCount] = React.useState(props.comment.score || 0)
-    const [userName, setUserName] = React.useState(JSON.parse(localStorage.getItem("userName")) || "")
+    const [user,setUser] = React.useState(JSON.parse(localStorage.getItem("user")) || "")
     const [reply , setReply] = React.useState(false)
 
     const [deleteModal  , setDelete] = React.useState(false)
@@ -51,8 +51,6 @@ const Comment = (props) => {
 
         }
 
-
-    
         
     }
     return (
@@ -68,7 +66,7 @@ const Comment = (props) => {
                     userImage={props.comment.user.image.png}
                     username={props.comment.user.username}
                     createdAt={props.comment.createdAt}
-                    label = {props.comment.user.username === userName ? "You" : ""}
+                    label = {props.comment.user.username === user.userName ? "You" : ""}
                 />
                 {
                     props.comment.replyingTo ?
@@ -83,7 +81,7 @@ const Comment = (props) => {
                 }
             </div>
             {
-                props.comment.user.username === userName ? 
+                props.comment.user.username === user.userName ? 
                 <div className='user_btn_section'>
                     <Button className='delete_btn' onClick={handleClose}>
                         <img src={DeleteIcon} alt='Delete button' />

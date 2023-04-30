@@ -7,7 +7,7 @@ import CustomHook from '../Hooks/CustomHook';
 const CommentHolder = () => {
 
     const Data = React.useContext(CustomHook)
-    console.log(Data)
+    // console.log(Data)
     const comments = Data.commentData?.map((comment, index) => {
         return (
             <div className='holder'>
