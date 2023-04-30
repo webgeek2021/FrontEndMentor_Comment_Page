@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 // import { data } from "../data"
 import Comment from './Comment'
 import AddCommentForm from './AddCommentForm'
 import UserIcon from "../images/avatars/image-juliusomo.png";
 import CustomHook from '../Hooks/CustomHook';
-const CommentHolder = (props) => {
+const CommentHolder = () => {
 
     const Data = React.useContext(CustomHook)
     console.log(Data)

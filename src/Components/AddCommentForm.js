@@ -7,7 +7,7 @@ const AddCommentForm = (props) => {
   const [comment, setComment] = React.useState("")
   const user = JSON.parse(localStorage.getItem("user"))
   const CommentContext = React.useContext(CustomHook)
-  console.log("USER",user.userName)
+  // console.log("USER",user.userName)
   const handleComment = (e) => {
     console.log(e.target.value)
     if (e.target.value) {
@@ -34,7 +34,7 @@ const AddCommentForm = (props) => {
         username : user.userName
       }
     }
-    console.log("OBJ",obj)
+    // console.log("OBJ",obj)
     comments[childIndex].replies.push(obj)
     // console.log("CHILD",childIndex)
     // let final_comments = comments.filter((c)=>c.id !== i)
@@ -43,7 +43,7 @@ const AddCommentForm = (props) => {
 
     localStorage.setItem("Comments" , JSON.stringify(comments))
     CommentContext.setCommentData(comments)
-    console.log("Comments",comments)
+    // console.log("Comments",comments)
 
     props.setReply()
   }

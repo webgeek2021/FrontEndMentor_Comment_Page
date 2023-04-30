@@ -1,7 +1,6 @@
 import React from "react";
 import CommentHolder from "./Components/CommentHolder";
 import Reply from "./Components/Reply";
-import ProfileImage from "./images/avatars/image-juliusomo.png";
 import CustomHook from "./Hooks/CustomHook";
 import { data } from "./data.js"
 function App() {

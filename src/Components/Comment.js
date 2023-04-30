@@ -16,9 +16,9 @@ const Comment = (props) => {
     const [deleteModal  , setDelete] = React.useState(false)
     const customHook = useContext(CustomHook)
 
-    console.log("CommentReply" , props.comment )
+    // console.log("CommentReply" , props.comment )
     const handleButtonIncrement = () => {
-        console.log("INCREMENT")
+        // console.log("INCREMENT")
         setCount(prev => prev + 1)
     }
     const handleButtonDecrement = () => {
@@ -31,20 +31,20 @@ const Comment = (props) => {
         setDelete(prev => !prev )
     }
     const handleDelete = (parentId ,childId) =>{
-        console.log("ParentId" , parentId)
-        console.log("ChildId" , childId)
+        // console.log("ParentId" , parentId)
+        // console.log("ChildId" , childId)
         
         let comments = customHook.commentData
         let parentIndex = comments.findIndex((c)=>c.id === parentId)
-        console.log("COMMENTS",comments)
-        console.log("PARENTINDEX",comments[parentIndex])
+        // console.log("COMMENTS",comments)
+        // console.log("PARENTINDEX",comments[parentIndex])
         if(parentIndex !== -1){
             let childs = comments[parentIndex].replies.filter((c) => c.id !== childId)
-            console.log("CHILDS",childs)
+            // console.log("CHILDS",childs)
             comments[parentIndex].replies = childs
 
             localStorage.setItem("Comments",JSON.stringify(comments))
-            console.log("AFTER DELETE" , comments)
+            // console.log("AFTER DELETE" , comments)
             customHook.setCommentData(comments)
 
             setDelete(prev => !prev)
